@@ -29,7 +29,7 @@ print("S-N FATIGUE ANALYSIS - OFFSHORE WIND FOUNDATION DESIGN")
 print("="*70)
 
 # Load data
-df = pd.read_excel('./Dataset_S355.xlsx')
+df = pd.read_excel('.Dataset_S355.xlsx')
 
 # Delete rows where Runout = 1
 df = df[df['Runout'] != 1].copy()
@@ -361,7 +361,7 @@ full_rse, full_r2, full_mae, full_ranking, pc_var = pca_paper_loocv(X, y, batche
 print(f"  PC1 variance: {pc_var[0]:.4f}, PC2 variance: {pc_var[1]:.4f}")
 drop1_rse, drop1_r2, drop1_mae, drop1_ranking, _ = pca_paper_loocv(X, y, batches, feature_names, model_type='linear', exclude_feature=full_ranking[0])
 results_loocv_linear.append({
-    'Method': 'PCA_paper',
+    'Method': 'PCA',
     'Full_RSE': full_rse,
     'DropTop1_RSE': drop1_rse,
     'Full_R2': full_r2,
